@@ -46,9 +46,10 @@ export default function Footer() {
           <FadeIn>
             <div className="space-y-8">
               <div className="flex items-center space-x-2">
-                <div className="h-10 w-10 bg-indigo-600 rounded-lg flex items-center justify-center">
-                  <span className="text-white font-bold text-lg">SMT</span>
-                </div>
+                 <div className="h-10 w-10 rounded-lg flex items-center justify-center 
+    bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] shadow-md">
+    <span className="text-white font-bold text-lg">SMT</span>
+  </div>
                 <span className="text-xl font-bold text-white">Sparkling Minds Technologies</span>
               </div>
               <p className="text-sm leading-6 text-gray-300">
@@ -184,9 +185,14 @@ export default function Footer() {
                   placeholder="Enter your email"
                   className="min-w-0 flex-auto bg-white/5 border-white/10 text-white placeholder:text-gray-400 focus:border-blue-500 transition-colors duration-300"
                 />
-                <Button className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 transform hover:scale-105 transition-all duration-300">
-                  Subscribe
-                </Button>
+               <Button
+  className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] 
+             hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] 
+             text-white transform hover:scale-105 transition-all duration-300 shadow-md rounded-lg px-6 py-3"
+>
+  Subscribe
+</Button>
+
               </div>
             </div>
           </div>

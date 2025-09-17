@@ -179,268 +179,318 @@ export default function CareersPage() {
           <div className="mx-auto max-w-2xl text-center">
             <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl text-balance">
               Join Our{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Team</span>
+               <span className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] bg-clip-text text-transparent">
+          Team
+        </span>
             </h1>
             <p className="mt-6 text-lg leading-8 text-gray-600 text-pretty">
               Build the future of technology with passionate professionals who are transforming businesses worldwide.
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <Button
-                size="lg"
-                className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white"
-              >
-                View Open Positions
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
+          size="lg"
+          className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] 
+                     hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] 
+                     text-white shadow-md transform hover:scale-105 transition-all duration-300"
+        >
+          View Open Positions
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
             </div>
           </div>
         </div>
       </section>
 
       {/* Benefits Section */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Why Work With Us?</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              We believe in creating an environment where talented people can do their best work.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
-              {benefits.map((benefit) => (
-                <div key={benefit.name} className="flex flex-col items-center text-center">
-                  <div className="flex h-16 w-16 items-center justify-center rounded-full bg-gradient-to-r from-blue-600 to-teal-600 text-white mb-4">
-                    <benefit.icon className="h-8 w-8" />
-                  </div>
-                  <dt className="text-base font-semibold leading-7 text-gray-900">{benefit.name}</dt>
-                  <dd className="mt-2 text-base leading-7 text-gray-600 text-center">{benefit.description}</dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
-
-      {/* Search and Filter */}
-      <section className="py-12 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
-            <div className="relative flex-1 max-w-md">
-              <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
-              <Input
-                type="text"
-                placeholder="Search positions..."
-                value={searchTerm}
-                onChange={(e) => setSearchTerm(e.target.value)}
-                className="pl-10"
-              />
+{/* Benefits Section */}
+<section className="py-24 sm:py-32 bg-gray-50">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
+        Why Work With Us?
+      </h2>
+      <p className="mt-6 text-lg leading-8 text-gray-600">
+        We believe in creating an environment where talented people can do their best work.
+      </p>
+    </div>
+    <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-3">
+        {benefits.map((benefit) => (
+          <div key={benefit.name} className="flex flex-col items-center text-center">
+            {/* Icon with gradient */}
+            <div className="flex h-16 w-16 items-center justify-center rounded-full 
+                            bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] text-white mb-4 shadow-md">
+              <benefit.icon className="h-8 w-8" />
             </div>
-            <div className="flex items-center gap-4">
-              <div className="flex items-center gap-2">
-                <Filter className="h-4 w-4 text-gray-600" />
-                <span className="text-sm font-medium text-gray-700">Department:</span>
-                <div className="flex flex-wrap gap-2">
-                  {departments.map((dept) => (
-                    <Button
-                      key={dept}
-                      variant={selectedDepartment === dept ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setSelectedDepartment(dept)}
-                      className={selectedDepartment === dept ? "bg-gradient-to-r from-blue-600 to-teal-600" : ""}
-                    >
-                      {dept}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-              <div className="flex items-center gap-2">
-                <span className="text-sm font-medium text-gray-700">Location:</span>
-                <div className="flex flex-wrap gap-2">
-                  {locations.map((location) => (
-                    <Button
-                      key={location}
-                      variant={selectedLocation === location ? "default" : "outline"}
-                      size="sm"
-                      onClick={() => setSelectedLocation(location)}
-                      className={selectedLocation === location ? "bg-gradient-to-r from-blue-600 to-teal-600" : ""}
-                    >
-                      {location}
-                    </Button>
-                  ))}
-                </div>
-              </div>
-            </div>
+            <dt className="text-base font-semibold leading-7 text-gray-900">{benefit.name}</dt>
+            <dd className="mt-2 text-base leading-7 text-gray-600 text-center">{benefit.description}</dd>
           </div>
-        </div>
-      </section>
+        ))}
+      </dl>
+      {/* CTA Button */}
+      <div className="mt-12 text-center">
+        <Button
+          size="lg"
+          className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] 
+                     hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] 
+                     text-white shadow-md transform hover:scale-105 transition-all duration-300"
+        >
+          View Open Positions
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Job Listings */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Open Positions</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              {filteredJobs.length} position{filteredJobs.length !== 1 ? "s" : ""} available
-            </p>
-          </div>
 
-          {filteredJobs.length === 0 ? (
-            <div className="text-center py-12">
-              <p className="text-gray-500 text-lg">No positions found matching your criteria.</p>
-            </div>
-          ) : (
-            <div className="space-y-6">
-              {filteredJobs.map((job) => (
-                <Card key={job.id} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <CardHeader className="pb-4">
-                    <div className="flex items-start justify-between">
-                      <div className="flex-1">
-                        <CardTitle className="text-xl font-bold text-gray-900 mb-2">{job.title}</CardTitle>
-                        <CardDescription className="text-gray-600 mb-4">{job.description}</CardDescription>
-                        <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
-                          <div className="flex items-center">
-                            <Briefcase className="h-4 w-4 mr-1" />
-                            {job.department}
-                          </div>
-                          <div className="flex items-center">
-                            <MapPin className="h-4 w-4 mr-1" />
-                            {job.location}
-                          </div>
-                          <div className="flex items-center">
-                            <Clock className="h-4 w-4 mr-1" />
-                            {job.type}
-                          </div>
-                          <div className="flex items-center">
-                            <DollarSign className="h-4 w-4 mr-1" />
-                            {job.salary}
-                          </div>
-                          <div className="flex items-center">
-                            <Users className="h-4 w-4 mr-1" />
-                            {job.experience}
-                          </div>
-                        </div>
-                      </div>
-                      <div className="flex flex-col items-end gap-2">
-                        <Badge variant="secondary">{job.department}</Badge>
-                        <span className="text-xs text-gray-500">
-                          Posted {new Date(job.posted).toLocaleDateString()}
-                        </span>
-                      </div>
-                    </div>
-                  </CardHeader>
-                  <CardContent className="space-y-4">
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Requirements</h4>
-                      <ul className="text-sm text-gray-600 space-y-1">
-                        {job.requirements.slice(0, 3).map((req, index) => (
-                          <li key={index} className="flex items-start">
-                            <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-2 flex-shrink-0" />
-                            {req}
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                    <div>
-                      <h4 className="font-semibold text-gray-900 mb-2">Benefits</h4>
-                      <div className="flex flex-wrap gap-2">
-                        {job.benefits.map((benefit) => (
-                          <Badge key={benefit} variant="outline" className="text-xs">
-                            {benefit}
-                          </Badge>
-                        ))}
-                      </div>
-                    </div>
-                    <div className="pt-4 flex items-center justify-between">
-                      <Button
-                        variant="outline"
-                        className="border-blue-600 text-blue-600 hover:bg-blue-50 bg-transparent"
-                      >
-                        View Details
-                      </Button>
-                      <Button className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white">
-                        Apply Now
-                        <ArrowRight className="ml-2 h-4 w-4" />
-                      </Button>
-                    </div>
-                  </CardContent>
-                </Card>
-              ))}
-            </div>
-          )}
-        </div>
-      </section>
-
-      {/* Life at SMT Section */}
-      <section className="bg-gray-50 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Life at SMT</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Discover what makes our workplace special through the eyes of our team members.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
-            {[
-              {
-                quote:
-                  "The collaborative environment and cutting-edge projects make every day exciting. I've grown more in my first year here than in my previous three years combined.",
-                author: "Alex Chen",
-                role: "Senior Developer",
-                image: "/team-member-1.jpg",
-              },
-              {
-                quote:
-                  "SMT truly values work-life balance. The flexibility to work remotely while being part of such an innovative team is incredible.",
-                author: "Maria Rodriguez",
-                role: "UX Designer",
-                image: "/team-member-2.jpg",
-              },
-              {
-                quote:
-                  "The learning opportunities are endless. From conferences to internal tech talks, SMT invests in our professional development.",
-                author: "David Park",
-                role: "DevOps Engineer",
-                image: "/team-member-3.jpg",
-              },
-            ].map((testimonial, index) => (
-              <Card key={index} className="border-0 shadow-lg">
-                <CardContent className="p-6">
-                  <blockquote className="text-gray-600 mb-6">"{testimonial.quote}"</blockquote>
-                  <div className="flex items-center">
-                    <img
-                      src={testimonial.image || "/placeholder.svg?height=48&width=48&query=team member"}
-                      alt={testimonial.author}
-                      className="h-12 w-12 rounded-full object-cover mr-4"
-                    />
-                    <div>
-                      <div className="font-semibold text-gray-900">{testimonial.author}</div>
-                      <div className="text-sm text-gray-500">{testimonial.role}</div>
-                    </div>
-                  </div>
-                </CardContent>
-              </Card>
+     {/* Search and Filter */}
+<section className="py-12 bg-gray-50">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="flex flex-col lg:flex-row gap-4 items-center justify-between">
+      <div className="relative flex-1 max-w-md">
+        <Search className="absolute left-3 top-1/2 h-4 w-4 -translate-y-1/2 text-gray-400" />
+        <Input
+          type="text"
+          placeholder="Search positions..."
+          value={searchTerm}
+          onChange={(e) => setSearchTerm(e.target.value)}
+          className="pl-10"
+        />
+      </div>
+      <div className="flex flex-col lg:flex-row items-start lg:items-center gap-4">
+        <div className="flex items-center gap-2 flex-wrap">
+          <Filter className="h-4 w-4 text-gray-600" />
+          <span className="text-sm font-medium text-gray-700">Department:</span>
+          <div className="flex flex-wrap gap-2">
+            {departments.map((dept) => (
+              <Button
+                key={dept}
+                variant={selectedDepartment === dept ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedDepartment(dept)}
+                className={
+                  selectedDepartment === dept
+                    ? "bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] text-white shadow-md"
+                    : ""
+                }
+              >
+                {dept}
+              </Button>
             ))}
           </div>
         </div>
-      </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-teal-600">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to Join Our Team?</h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Don't see the perfect role? We're always looking for talented individuals to join our growing team.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-50">
-                Send Us Your Resume
+        <div className="flex items-center gap-2 flex-wrap">
+          <span className="text-sm font-medium text-gray-700">Location:</span>
+          <div className="flex flex-wrap gap-2">
+            {locations.map((location) => (
+              <Button
+                key={location}
+                variant={selectedLocation === location ? "default" : "outline"}
+                size="sm"
+                onClick={() => setSelectedLocation(location)}
+                className={
+                  selectedLocation === location
+                    ? "bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] text-white shadow-md"
+                    : ""
+                }
+              >
+                {location}
               </Button>
-            </div>
+            ))}
           </div>
         </div>
-      </section>
+      </div>
+    </div>
+  </div>
+</section>
+
+
+    {/* Job Listings */}
+<section className="py-24 sm:py-32">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center mb-16">
+      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Open Positions</h2>
+      <p className="mt-6 text-lg leading-8 text-gray-600">
+        {filteredJobs.length} position{filteredJobs.length !== 1 ? "s" : ""} available
+      </p>
+    </div>
+
+    {filteredJobs.length === 0 ? (
+      <div className="text-center py-12">
+        <p className="text-gray-500 text-lg">No positions found matching your criteria.</p>
+      </div>
+    ) : (
+      <div className="space-y-6">
+        {filteredJobs.map((job) => (
+          <Card key={job.id} className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
+            <CardHeader className="pb-4">
+              <div className="flex items-start justify-between">
+                <div className="flex-1">
+                  <CardTitle className="text-xl font-bold text-gray-900 mb-2">{job.title}</CardTitle>
+                  <CardDescription className="text-gray-600 mb-4">{job.description}</CardDescription>
+                  <div className="flex flex-wrap items-center gap-4 text-sm text-gray-500">
+                    <div className="flex items-center">
+                      <Briefcase className="h-4 w-4 mr-1" />
+                      {job.department}
+                    </div>
+                    <div className="flex items-center">
+                      <MapPin className="h-4 w-4 mr-1" />
+                      {job.location}
+                    </div>
+                    <div className="flex items-center">
+                      <Clock className="h-4 w-4 mr-1" />
+                      {job.type}
+                    </div>
+                    <div className="flex items-center">
+                      <DollarSign className="h-4 w-4 mr-1" />
+                      {job.salary}
+                    </div>
+                    <div className="flex items-center">
+                      <Users className="h-4 w-4 mr-1" />
+                      {job.experience}
+                    </div>
+                  </div>
+                </div>
+                <div className="flex flex-col items-end gap-2">
+                  <Badge variant="secondary">{job.department}</Badge>
+                  <span className="text-xs text-gray-500">
+                    Posted {new Date(job.posted).toLocaleDateString()}
+                  </span>
+                </div>
+              </div>
+            </CardHeader>
+            <CardContent className="space-y-4">
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">Requirements</h4>
+                <ul className="text-sm text-gray-600 space-y-1">
+                  {job.requirements.slice(0, 3).map((req, index) => (
+                    <li key={index} className="flex items-start">
+                      <span className="w-1.5 h-1.5 bg-blue-500 rounded-full mt-2 mr-2 flex-shrink-0" />
+                      {req}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+              <div>
+                <h4 className="font-semibold text-gray-900 mb-2">Benefits</h4>
+                <div className="flex flex-wrap gap-2">
+                  {job.benefits.map((benefit) => (
+                    <Badge key={benefit} variant="outline" className="text-xs">
+                      {benefit}
+                    </Badge>
+                  ))}
+                </div>
+              </div>
+              <div className="pt-4 flex items-center justify-between">
+                <Button
+                  variant="outline"
+                  className="border-[#0A1B6F] text-[#0A1B6F] hover:bg-[#0A1B6F]/10"
+                >
+                  View Details
+                </Button>
+                <Button
+                  className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] 
+                             hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] 
+                             text-white shadow-md transform hover:scale-105 transition-all duration-300"
+                >
+                  Apply Now
+                  <ArrowRight className="ml-2 h-4 w-4" />
+                </Button>
+              </div>
+            </CardContent>
+          </Card>
+        ))}
+      </div>
+    )}
+  </div>
+</section>
+
+    {/* Life at SMT Section */}
+<section className="bg-gray-50 py-24 sm:py-32">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Life at SMT</h2>
+      <p className="mt-6 text-lg leading-8 text-gray-600">
+        Discover what makes our workplace special through the eyes of our team members.
+      </p>
+    </div>
+
+    <div className="mx-auto mt-16 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 lg:mx-0 lg:max-w-none lg:grid-cols-3">
+      {[
+        {
+          quote:
+            "The collaborative environment and cutting-edge projects make every day exciting. I've grown more in my first year here than in my previous three years combined.",
+          author: "Alex Chen",
+          role: "Senior Developer",
+          image: "/team-member-1.jpg",
+        },
+        {
+          quote:
+            "SMT truly values work-life balance. The flexibility to work remotely while being part of such an innovative team is incredible.",
+          author: "Maria Rodriguez",
+          role: "UX Designer",
+          image: "/team-member-2.jpg",
+        },
+        {
+          quote:
+            "The learning opportunities are endless. From conferences to internal tech talks, SMT invests in our professional development.",
+          author: "David Park",
+          role: "DevOps Engineer",
+          image: "/team-member-3.jpg",
+        },
+      ].map((testimonial, index) => (
+        <Card key={index} className="border-0 shadow-lg">
+          <CardContent className="p-6">
+            <blockquote className="text-gray-600 mb-6">"{testimonial.quote}"</blockquote>
+            <div className="flex items-center">
+              <img
+                src={testimonial.image || "/placeholder.svg?height=48&width=48&query=team member"}
+                alt={testimonial.author}
+                className="h-12 w-12 rounded-full object-cover mr-4"
+              />
+              <div>
+                <div className="font-semibold text-gray-900">{testimonial.author}</div>
+                <div className="text-sm text-gray-500">{testimonial.role}</div>
+              </div>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
+
+{/* CTA Section */}
+<section className="relative bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] overflow-hidden">
+  {/* Optional subtle overlay for depth */}
+  <div className="absolute inset-0 bg-white/10 pointer-events-none"></div>
+
+  <div className="relative px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Ready to Join Our Team?
+      </h2>
+      <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
+        Don't see the perfect role? We're always looking for talented individuals to join our growing team.
+      </p>
+      <div className="mt-10 flex items-center justify-center gap-x-6">
+        <Button
+          size="lg"
+          className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF]
+                     hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5]
+                     text-white shadow-md transform hover:scale-105 transition-all duration-300"
+        >
+          Send Us Your Resume
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
+
     </div>
   )
 }

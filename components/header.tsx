@@ -35,7 +35,8 @@ export default function Header() {
               <motion.div whileHover={{ scale: 1.05 }} transition={{ duration: 0.2 }}>
                 <Image className="h-10 w-auto" src="/images/smt-logo.png" alt="SMT Logo" width={120} height={40} />
               </motion.div>
-              <span className="text-xl font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+              {/* Brand Gradient Title */}
+              <span className="text-xl font-bold bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] bg-clip-text text-transparent">
                 SMT
               </span>
             </div>
@@ -61,10 +62,11 @@ export default function Header() {
             >
               <Link
                 href={item.href}
-                className="text-sm font-semibold leading-6 text-gray-900 hover:text-blue-600 transition-colors duration-300 relative group"
+                className="text-sm font-semibold leading-6 text-gray-900 hover:text-transparent bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] bg-clip-text transition-colors duration-300 relative group"
               >
                 {item.name}
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-blue-600 to-teal-600 group-hover:w-full transition-all duration-300"></span>
+                {/* Underline with brand gradient */}
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] group-hover:w-full transition-all duration-300"></span>
               </Link>
             </motion.div>
           ))}
@@ -75,7 +77,11 @@ export default function Header() {
             animate={{ opacity: 1, x: 0 }}
             transition={{ duration: 0.6, delay: 0.8 }}
           >
-            <Button className="bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white transform hover:scale-105 transition-all duration-300">
+            {/* Desktop CTA Button with brand gradient */}
+            <Button className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] 
+              hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] 
+              text-white font-semibold px-6 py-3 rounded-xl shadow-lg 
+              transform hover:scale-105 transition-all duration-300">
               Get Free Consultation
             </Button>
           </motion.div>
@@ -105,7 +111,8 @@ export default function Header() {
                   <span className="sr-only">Sparkling Minds Technologies</span>
                   <div className="flex items-center gap-2">
                     <Image className="h-8 w-auto" src="/images/smt-logo.png" alt="SMT Logo" width={96} height={32} />
-                    <span className="text-lg font-bold bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
+                    {/* Mobile Logo Title with brand gradient */}
+                    <span className="text-lg font-bold bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] bg-clip-text text-transparent">
                       SMT
                     </span>
                   </div>
@@ -131,7 +138,7 @@ export default function Header() {
                       >
                         <Link
                           href={item.href}
-                          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:bg-gray-50 transition-colors duration-200"
+                          className="-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 text-gray-900 hover:text-transparent bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] bg-clip-text transition-colors duration-200"
                           onClick={() => setMobileMenuOpen(false)}
                         >
                           {item.name}
@@ -145,7 +152,11 @@ export default function Header() {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ duration: 0.3, delay: 0.7 }}
                   >
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white">
+                    {/* Mobile CTA Button with brand gradient */}
+                    <Button className="w-full bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] 
+                      hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] 
+                      text-white font-semibold px-6 py-3 rounded-xl shadow-lg 
+                      transform hover:scale-105 transition-all duration-300">
                       Get Free Consultation
                     </Button>
                   </motion.div>

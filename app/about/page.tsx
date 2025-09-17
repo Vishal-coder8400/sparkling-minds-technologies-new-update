@@ -144,23 +144,26 @@ const stats = [
 export default function AboutPage() {
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-teal-50">
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl text-balance">
-              About{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">
-                Sparkling Minds
-              </span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 text-pretty">
-              We're a team of passionate technologists, designers, and strategists dedicated to transforming businesses
-              through innovative digital solutions.
-            </p>
-          </div>
-        </div>
-      </section>
+     {/* About Hero Section */}
+<section className="relative overflow-hidden bg-gradient-to-br from-[#F9FAFB] via-white to-[#F0FDFA]">
+  <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold tracking-tight text-[#111827] sm:text-6xl text-balance">
+        About{" "}
+        <span className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] bg-clip-text text-transparent">
+          Sparkling Minds
+        </span>
+      </h1>
+
+      {/* Paragraph */}
+      <p className="mt-6 text-lg leading-8 text-[#4B5563] text-pretty">
+        We're a team of passionate technologists, designers, and strategists dedicated to transforming businesses
+        through innovative digital solutions.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Company Story */}
       <section className="py-24 sm:py-32">
@@ -213,219 +216,258 @@ export default function AboutPage() {
         </div>
       </section>
 
-      {/* Stats */}
-      <section className="bg-gray-50 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl lg:max-w-none">
-            <div className="text-center">
-              <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-                Trusted by Organizations Worldwide
-              </h2>
-              <p className="mt-4 text-lg leading-8 text-gray-600">
-                Our track record speaks for itself - delivering exceptional results across industries and geographies.
+     {/* Stats Section */}
+<section className="bg-[#F9FAFB] py-24 sm:py-32">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-2xl lg:max-w-none">
+      <div className="text-center">
+        {/* Heading */}
+        <h2 className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
+          Trusted by Organizations Worldwide
+        </h2>
+
+        {/* Paragraph */}
+        <p className="mt-4 text-lg leading-8 text-[#4B5563]">
+          Our track record speaks for itself - delivering exceptional results across industries and geographies.
+        </p>
+      </div>
+
+      {/* Stats Grid */}
+      <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
+        {stats.map((stat) => (
+          <div key={stat.name} className="flex flex-col bg-white p-8 shadow-md">
+            <dt className="text-sm font-semibold leading-6 text-[#4E26E2] flex items-center justify-center gap-2">
+              <stat.icon className="h-5 w-5 text-[#0A1B6F]" />
+              {stat.name}
+            </dt>
+            <dd className="order-first text-3xl font-semibold tracking-tight text-[#111827]">
+              {stat.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</section>
+
+
+    {/* Mission & Vision Section */}
+<section className="py-24 sm:py-32 bg-[#F9FAFB]">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    {/* Heading */}
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
+        Mission & Vision
+      </h2>
+      <p className="mt-6 text-lg leading-8 text-[#4B5563]">
+        Our purpose and aspirations guide every decision we make and every solution we create.
+      </p>
+    </div>
+
+    <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+        
+        {/* Mission Card */}
+        <Card className="border-0 shadow-lg">
+          <CardHeader>
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] shadow-md">
+                <Target className="h-6 w-6 text-white" />
+              </div>
+              <CardTitle className="text-xl font-bold text-[#111827]">Our Mission</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="text-[#4B5563] leading-7">
+              To empower organizations with innovative technology solutions that drive growth, efficiency, and
+              competitive advantage. We're committed to delivering exceptional value through strategic
+              partnerships, technical excellence, and unwavering dedication to our clients' success.
+            </p>
+          </CardContent>
+        </Card>
+
+        {/* Vision Card */}
+        <Card className="border-0 shadow-lg">
+          <CardHeader>
+            <div className="flex items-center gap-4">
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] shadow-md">
+                <Eye className="h-6 w-6 text-white" />
+              </div>
+              <CardTitle className="text-xl font-bold text-[#111827]">Our Vision</CardTitle>
+            </div>
+          </CardHeader>
+          <CardContent>
+            <p className="text-[#4B5563] leading-7">
+              To be the world's most trusted technology partner, recognized for transforming businesses through
+              innovative solutions, exceptional service, and lasting relationships. We envision a future where
+              technology seamlessly enhances human potential and business success.
+            </p>
+          </CardContent>
+        </Card>
+
+      </dl>
+    </div>
+  </div>
+</section>
+
+
+     {/* Values Section */}
+<section className="bg-[#F9FAFB] py-24 sm:py-32">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    {/* Heading */}
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
+        Our Values
+      </h2>
+      <p className="mt-6 text-lg leading-8 text-[#4B5563]">
+        The principles that define our culture and guide our relationships with clients, partners, and each other.
+      </p>
+    </div>
+
+    <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
+      <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
+        {values.map((value) => (
+          <div key={value.name} className="flex flex-col bg-white p-6 rounded-lg shadow-md">
+            <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-[#0A1B6F]">
+              <value.icon className="h-5 w-5 flex-none text-[#4E26E2]" aria-hidden="true" />
+              {value.name}
+            </dt>
+            <dd className="mt-4 text-base leading-7 text-[#4B5563]">
+              {value.description}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  </div>
+</section>
+
+{/* Timeline Section */}
+<section className="py-24 sm:py-32 bg-[#F9FAFB]">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    {/* Heading */}
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
+        Our Journey
+      </h2>
+      <p className="mt-6 text-lg leading-8 text-[#4B5563]">
+        Key milestones that have shaped our growth and success over the years.
+      </p>
+    </div>
+
+    <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
+      <div className="space-y-8">
+        {milestones.map((milestone, index) => (
+          <div key={milestone.year} className="relative flex gap-x-4">
+            {/* Timeline Marker */}
+            <div className="relative flex h-6 w-6 flex-none items-center justify-center">
+              <div className="h-1.5 w-1.5 rounded-full bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF]" />
+              {index !== milestones.length - 1 && (
+                <div className="absolute top-6 h-full w-px bg-gradient-to-b from-[#0A1B6F] via-[#4E26E2] to-[#B948FF]" aria-hidden="true" />
+              )}
+            </div>
+
+            {/* Timeline Content */}
+            <div className="flex-auto bg-white p-6 rounded-lg shadow-md">
+              <div className="flex items-center gap-x-2 mb-2">
+                <Badge variant="outline" className="text-[#4E26E2] border-[#4E26E2]">
+                  {milestone.year}
+                </Badge>
+                <h3 className="text-sm font-semibold leading-6 text-[#111827]">
+                  {milestone.title}
+                </h3>
+              </div>
+              <p className="text-sm leading-6 text-[#4B5563]">
+                {milestone.description}
               </p>
             </div>
-            <dl className="mt-16 grid grid-cols-1 gap-0.5 overflow-hidden rounded-2xl text-center sm:grid-cols-2 lg:grid-cols-4">
-              {stats.map((stat) => (
-                <div key={stat.name} className="flex flex-col bg-white p-8">
-                  <dt className="text-sm font-semibold leading-6 text-gray-600 flex items-center justify-center gap-2">
-                    <stat.icon className="h-5 w-5 text-blue-600" />
-                    {stat.name}
-                  </dt>
-                  <dd className="order-first text-3xl font-semibold tracking-tight text-gray-900">{stat.value}</dd>
-                </div>
-              ))}
-            </dl>
           </div>
-        </div>
-      </section>
+        ))}
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* Mission & Vision */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Mission & Vision</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Our purpose and aspirations guide every decision we make and every solution we create.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-              <Card className="border-0 shadow-lg">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-teal-600">
-                      <Target className="h-6 w-6 text-white" />
-                    </div>
-                    <CardTitle className="text-xl font-bold text-gray-900">Our Mission</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 leading-7">
-                    To empower organizations with innovative technology solutions that drive growth, efficiency, and
-                    competitive advantage. We're committed to delivering exceptional value through strategic
-                    partnerships, technical excellence, and unwavering dedication to our clients' success.
-                  </p>
-                </CardContent>
-              </Card>
 
-              <Card className="border-0 shadow-lg">
-                <CardHeader>
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-teal-600">
-                      <Eye className="h-6 w-6 text-white" />
-                    </div>
-                    <CardTitle className="text-xl font-bold text-gray-900">Our Vision</CardTitle>
-                  </div>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-gray-600 leading-7">
-                    To be the world's most trusted technology partner, recognized for transforming businesses through
-                    innovative solutions, exceptional service, and lasting relationships. We envision a future where
-                    technology seamlessly enhances human potential and business success.
-                  </p>
-                </CardContent>
-              </Card>
-            </dl>
-          </div>
-        </div>
-      </section>
+   {/* Team Section */}
+<section className="bg-[#F9FAFB] py-24 sm:py-32">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    {/* Heading */}
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
+        Meet Our Leadership Team
+      </h2>
+      <p className="mt-6 text-lg leading-8 text-[#4B5563]">
+        Experienced leaders driving innovation and excellence in everything we do.
+      </p>
+    </div>
 
-      {/* Values */}
-      <section className="bg-gray-50 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Values</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              The principles that define our culture and guide our relationships with clients, partners, and each other.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-none">
-            <dl className="grid max-w-xl grid-cols-1 gap-x-8 gap-y-16 lg:max-w-none lg:grid-cols-2">
-              {values.map((value) => (
-                <div key={value.name} className="flex flex-col">
-                  <dt className="flex items-center gap-x-3 text-base font-semibold leading-7 text-gray-900">
-                    <value.icon className="h-5 w-5 flex-none text-blue-600" aria-hidden="true" />
-                    {value.name}
-                  </dt>
-                  <dd className="mt-4 flex flex-auto flex-col text-base leading-7 text-gray-600">
-                    <p className="flex-auto">{value.description}</p>
-                  </dd>
-                </div>
-              ))}
-            </dl>
-          </div>
-        </div>
-      </section>
+    {/* Team Grid */}
+    <ul
+      role="list"
+      className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
+    >
+      {team.map((person) => (
+        <li key={person.name}>
+          <Card className="border-0 shadow-md hover:shadow-xl transition-shadow duration-300 rounded-lg">
+            <CardContent className="p-6">
+              <img
+                className="mx-auto h-32 w-32 rounded-full object-cover border-2 border-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF]"
+                src={person.image || "/placeholder.svg"}
+                alt={person.name}
+              />
+              <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-[#111827] text-center">
+                {person.name}
+              </h3>
+              <p className="text-sm leading-6 text-[#4E26E2] text-center">{person.role}</p>
+              <p className="mt-4 text-sm leading-6 text-[#4B5563] text-center">{person.bio}</p>
+              <div className="mt-6 flex justify-center gap-x-6">
+                <a href={person.linkedin} className="text-gray-400 hover:text-[#4E26E2]">
+                  <span className="sr-only">LinkedIn</span>
+                  <Linkedin className="h-5 w-5" />
+                </a>
+                <a href={person.twitter} className="text-gray-400 hover:text-[#4E26E2]">
+                  <span className="sr-only">Twitter</span>
+                  <Twitter className="h-5 w-5" />
+                </a>
+                <a href={`mailto:${person.email}`} className="text-gray-400 hover:text-[#4E26E2]">
+                  <span className="sr-only">Email</span>
+                  <Mail className="h-5 w-5" />
+                </a>
+              </div>
+            </CardContent>
+          </Card>
+        </li>
+      ))}
+    </ul>
+  </div>
+</section>
 
-      {/* Timeline */}
-      <section className="py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Our Journey</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Key milestones that have shaped our growth and success over the years.
-            </p>
-          </div>
-          <div className="mx-auto mt-16 max-w-2xl sm:mt-20 lg:mt-24 lg:max-w-4xl">
-            <div className="space-y-8">
-              {milestones.map((milestone, index) => (
-                <div key={milestone.year} className="relative flex gap-x-4">
-                  <div
-                    className={`relative flex h-6 w-6 flex-none items-center justify-center ${
-                      index === milestones.length - 1 ? "bg-blue-600" : "bg-white"
-                    }`}
-                  >
-                    {index !== milestones.length - 1 && (
-                      <div className="h-1.5 w-1.5 rounded-full bg-gray-100 ring-1 ring-gray-300" />
-                    )}
-                    {index === milestones.length - 1 && <div className="h-1.5 w-1.5 rounded-full bg-white" />}
-                    {index !== milestones.length - 1 && (
-                      <div className="absolute top-6 h-full w-px bg-gray-200" aria-hidden="true" />
-                    )}
-                  </div>
-                  <div className="flex-auto">
-                    <div className="flex items-center gap-x-2">
-                      <Badge variant="outline" className="text-blue-600 border-blue-600">
-                        {milestone.year}
-                      </Badge>
-                      <h3 className="text-sm font-semibold leading-6 text-gray-900">{milestone.title}</h3>
-                    </div>
-                    <p className="mt-2 text-sm leading-6 text-gray-600">{milestone.description}</p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
-      </section>
 
-      {/* Team */}
-      <section className="bg-gray-50 py-24 sm:py-32">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">Meet Our Leadership Team</h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              Experienced leaders driving innovation and excellence in everything we do.
-            </p>
-          </div>
-          <ul
-            role="list"
-            className="mx-auto mt-20 grid max-w-2xl grid-cols-1 gap-x-8 gap-y-16 sm:grid-cols-2 lg:mx-0 lg:max-w-none lg:grid-cols-3"
-          >
-            {team.map((person) => (
-              <li key={person.name}>
-                <Card className="border-0 shadow-lg hover:shadow-xl transition-shadow duration-300">
-                  <CardContent className="p-6">
-                    <img
-                      className="mx-auto h-32 w-32 rounded-full object-cover"
-                      src={person.image || "/placeholder.svg"}
-                      alt={person.name}
-                    />
-                    <h3 className="mt-6 text-base font-semibold leading-7 tracking-tight text-gray-900 text-center">
-                      {person.name}
-                    </h3>
-                    <p className="text-sm leading-6 text-blue-600 text-center">{person.role}</p>
-                    <p className="mt-4 text-sm leading-6 text-gray-600 text-center">{person.bio}</p>
-                    <div className="mt-6 flex justify-center gap-x-6">
-                      <a href={person.linkedin} className="text-gray-400 hover:text-blue-600">
-                        <span className="sr-only">LinkedIn</span>
-                        <Linkedin className="h-5 w-5" />
-                      </a>
-                      <a href={person.twitter} className="text-gray-400 hover:text-blue-600">
-                        <span className="sr-only">Twitter</span>
-                        <Twitter className="h-5 w-5" />
-                      </a>
-                      <a href={`mailto:${person.email}`} className="text-gray-400 hover:text-blue-600">
-                        <span className="sr-only">Email</span>
-                        <Mail className="h-5 w-5" />
-                      </a>
-                    </div>
-                  </CardContent>
-                </Card>
-              </li>
-            ))}
-          </ul>
-        </div>
-      </section>
+    {/* CTA Section */}
+<section className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF]">
+  <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center">
+      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Ready to Work Together?
+      </h2>
+      <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-[#E0E7FF]">
+        Let's discuss how our team can help transform your business with innovative technology solutions.
+      </p>
+      <div className="mt-10 flex items-center justify-center gap-x-6">
+        <Button
+          size="lg"
+          variant="secondary"
+          className="bg-white text-[#0A1B6F] hover:bg-gray-50 hover:text-[#4E26E2] shadow-md transform hover:scale-105 transition-all duration-300"
+        >
+          Get in Touch
+          <ArrowRight className="ml-2 h-4 w-4" />
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-teal-600">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">Ready to Work Together?</h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Let's discuss how our team can help transform your business with innovative technology solutions.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-50">
-                Get in Touch
-                <ArrowRight className="ml-2 h-4 w-4" />
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
     </div>
   )
 }

@@ -123,20 +123,25 @@ const stats = [
 export default function IndustriesPage() {
   return (
     <div className="bg-white">
-      {/* Hero Section */}
-      <section className="relative overflow-hidden bg-gradient-to-br from-blue-50 via-white to-teal-50">
-        <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-6xl text-balance">
-              Industries We{" "}
-              <span className="bg-gradient-to-r from-blue-600 to-teal-600 bg-clip-text text-transparent">Serve</span>
-            </h1>
-            <p className="mt-6 text-lg leading-8 text-gray-600 text-pretty">
-              Deep industry expertise combined with cutting-edge technology to solve your unique business challenges.
-            </p>
-          </div>
-        </div>
-      </section>
+     {/* Hero Section */}
+<section className="relative overflow-hidden bg-gradient-to-br from-[#F9FAFB] via-white to-[#F0FDFA]">
+  <div className="mx-auto max-w-7xl px-6 py-24 sm:py-32 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center">
+      {/* Heading */}
+      <h1 className="text-4xl font-bold tracking-tight text-[#111827] sm:text-6xl text-balance">
+        Industries We{" "}
+        <span className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] bg-clip-text text-transparent">
+          Serve
+        </span>
+      </h1>
+
+      {/* Paragraph */}
+      <p className="mt-6 text-lg leading-8 text-[#4B5563] text-pretty">
+        Deep industry expertise combined with cutting-edge technology to solve your unique business challenges.
+      </p>
+    </div>
+  </div>
+</section>
 
       {/* Stats Section */}
       <section className="py-16 sm:py-20">
@@ -158,98 +163,111 @@ export default function IndustriesPage() {
       </section>
 
       {/* Industries Grid */}
-      <section className="py-24 sm:py-32 bg-gray-50">
-        <div className="mx-auto max-w-7xl px-6 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center mb-16">
-            <h2 className="text-3xl font-bold tracking-tight text-gray-900 sm:text-4xl">
-              Specialized Industry Solutions
-            </h2>
-            <p className="mt-6 text-lg leading-8 text-gray-600">
-              We understand the unique challenges and opportunities in each industry we serve.
-            </p>
-          </div>
+    <section className="py-24 sm:py-32 bg-[#F9FAFB]">
+  <div className="mx-auto max-w-7xl px-6 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center mb-16">
+      <h2 className="text-3xl font-bold tracking-tight text-[#111827] sm:text-4xl">
+        Specialized Industry Solutions
+      </h2>
+      <p className="mt-6 text-lg leading-8 text-[#4B5563]">
+        We understand the unique challenges and opportunities in each industry we serve.
+      </p>
+    </div>
 
-          <div className="grid gap-8 lg:grid-cols-2">
-            {industries.map((industry) => (
-              <Card
-                key={industry.id}
-                className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white"
+    <div className="grid gap-8 lg:grid-cols-2">
+      {industries.map((industry) => (
+        <Card
+          key={industry.id}
+          className="relative overflow-hidden border-0 shadow-lg hover:shadow-xl transition-shadow duration-300 bg-white"
+        >
+          <CardHeader className="pb-4">
+            <div className="flex items-center gap-4">
+              {/* Icon with consistent gradient */}
+              <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] shadow-md">
+                <industry.icon className="h-6 w-6 text-white" />
+              </div>
+              <div>
+                <CardTitle className="text-xl font-bold text-[#111827]">{industry.name}</CardTitle>
+              </div>
+            </div>
+            <CardDescription className="text-base text-[#4B5563] mt-2">
+              {industry.description}
+            </CardDescription>
+          </CardHeader>
+
+          <CardContent className="space-y-6">
+            {/* Challenges */}
+            <div>
+              <h4 className="font-semibold text-[#111827] mb-3 flex items-center">
+                <Shield className="h-4 w-4 mr-2 text-red-500" />
+                Key Challenges
+              </h4>
+              <ul className="space-y-1">
+                {industry.challenges.slice(0, 3).map((challenge) => (
+                  <li key={challenge} className="flex items-start text-sm text-[#4B5563]">
+                    <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-2 flex-shrink-0" />
+                    {challenge}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Solutions */}
+            <div>
+              <h4 className="font-semibold text-[#111827] mb-3 flex items-center">
+                <Zap className="h-4 w-4 mr-2 text-green-500" />
+                Our Solutions
+              </h4>
+              <ul className="space-y-1">
+                {industry.solutions.slice(0, 3).map((solution) => (
+                  <li key={solution} className="flex items-start text-sm text-[#4B5563]">
+                    <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
+                    {solution}
+                  </li>
+                ))}
+              </ul>
+            </div>
+
+            {/* Technologies */}
+            <div>
+              <h4 className="font-semibold text-[#111827] mb-3">Technologies</h4>
+              <div className="flex flex-wrap gap-2">
+                {industry.technologies.map((tech) => (
+                  <Badge
+                    key={tech}
+                    variant="secondary"
+                    className="text-xs border border-[#4E26E2] text-[#4E26E2] bg-[#F9F5FF]"
+                  >
+                    {tech}
+                  </Badge>
+                ))}
+              </div>
+            </div>
+
+            {/* Case Study */}
+            <div className="bg-[#F0F5FF] p-4 rounded-lg">
+              <h4 className="font-semibold text-[#111827] mb-2">Success Story</h4>
+              <p className="text-sm text-[#4B5563]">{industry.caseStudy}</p>
+            </div>
+
+            {/* CTA */}
+            <div className="pt-4">
+              <Button
+                className="w-full bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF] 
+                           hover:from-[#1A2CCF] hover:via-[#7231EC] hover:to-[#953DF5] 
+                           text-white shadow-md transform hover:scale-105 transition-all duration-300"
               >
-                <CardHeader className="pb-4">
-                  <div className="flex items-center gap-4">
-                    <div className="flex h-12 w-12 items-center justify-center rounded-lg bg-gradient-to-r from-blue-600 to-teal-600">
-                      <industry.icon className="h-6 w-6 text-white" />
-                    </div>
-                    <div>
-                      <CardTitle className="text-xl font-bold text-gray-900">{industry.name}</CardTitle>
-                    </div>
-                  </div>
-                  <CardDescription className="text-base text-gray-600 mt-2">{industry.description}</CardDescription>
-                </CardHeader>
-                <CardContent className="space-y-6">
-                  {/* Challenges */}
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <Shield className="h-4 w-4 mr-2 text-red-500" />
-                      Key Challenges
-                    </h4>
-                    <ul className="space-y-1">
-                      {industry.challenges.slice(0, 3).map((challenge) => (
-                        <li key={challenge} className="flex items-start text-sm text-gray-600">
-                          <span className="w-1.5 h-1.5 bg-red-400 rounded-full mt-2 mr-2 flex-shrink-0" />
-                          {challenge}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
+                Learn More About {industry.name}
+                <ArrowRight className="ml-2 h-4 w-4" />
+              </Button>
+            </div>
+          </CardContent>
+        </Card>
+      ))}
+    </div>
+  </div>
+</section>
 
-                  {/* Solutions */}
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3 flex items-center">
-                      <Zap className="h-4 w-4 mr-2 text-green-500" />
-                      Our Solutions
-                    </h4>
-                    <ul className="space-y-1">
-                      {industry.solutions.slice(0, 3).map((solution) => (
-                        <li key={solution} className="flex items-start text-sm text-gray-600">
-                          <CheckCircle className="h-4 w-4 text-green-500 mr-2 mt-0.5 flex-shrink-0" />
-                          {solution}
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-
-                  {/* Technologies */}
-                  <div>
-                    <h4 className="font-semibold text-gray-900 mb-3">Technologies</h4>
-                    <div className="flex flex-wrap gap-2">
-                      {industry.technologies.map((tech) => (
-                        <Badge key={tech} variant="secondary" className="text-xs">
-                          {tech}
-                        </Badge>
-                      ))}
-                    </div>
-                  </div>
-
-                  {/* Case Study */}
-                  <div className="bg-blue-50 p-4 rounded-lg">
-                    <h4 className="font-semibold text-gray-900 mb-2">Success Story</h4>
-                    <p className="text-sm text-gray-700">{industry.caseStudy}</p>
-                  </div>
-
-                  {/* CTA */}
-                  <div className="pt-4">
-                    <Button className="w-full bg-gradient-to-r from-blue-600 to-teal-600 hover:from-blue-700 hover:to-teal-700 text-white">
-                      Learn More About {industry.name}
-                      <ArrowRight className="ml-2 h-4 w-4" />
-                    </Button>
-                  </div>
-                </CardContent>
-              </Card>
-            ))}
-          </div>
-        </div>
-      </section>
 
       {/* Why Choose Us Section */}
       <section className="py-24 sm:py-32">
@@ -290,24 +308,34 @@ export default function IndustriesPage() {
         </div>
       </section>
 
-      {/* CTA Section */}
-      <section className="bg-gradient-to-r from-blue-600 to-teal-600">
-        <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
-          <div className="mx-auto max-w-2xl text-center">
-            <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
-              Ready to Transform Your Industry?
-            </h2>
-            <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-blue-100">
-              Let's discuss how our industry expertise can help solve your unique business challenges.
-            </p>
-            <div className="mt-10 flex items-center justify-center gap-x-6">
-              <Button size="lg" variant="secondary" className="bg-white text-blue-600 hover:bg-gray-50">
-                Schedule Industry Consultation
-              </Button>
-            </div>
-          </div>
-        </div>
-      </section>
+     {/* CTA Section */}
+<section className="bg-gradient-to-r from-[#0A1B6F] via-[#4E26E2] to-[#B948FF]">
+  <div className="px-6 py-24 sm:px-6 sm:py-32 lg:px-8">
+    <div className="mx-auto max-w-2xl text-center">
+      {/* Heading */}
+      <h2 className="text-3xl font-bold tracking-tight text-white sm:text-4xl">
+        Ready to Transform Your Industry?
+      </h2>
+
+      {/* Paragraph */}
+      <p className="mx-auto mt-6 max-w-xl text-lg leading-8 text-[#F9F5FF]">
+        Let's discuss how our industry expertise can help solve your unique business challenges.
+      </p>
+
+      {/* Button */}
+      <div className="mt-10 flex items-center justify-center gap-x-6">
+        <Button
+          size="lg"
+          className="bg-white text-[#0A1B6F] hover:bg-gray-50 shadow-md 
+                     transform hover:scale-105 transition-all duration-300"
+        >
+          Schedule Industry Consultation
+        </Button>
+      </div>
+    </div>
+  </div>
+</section>
+
     </div>
   )
 }
